@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 	id "com.palantir.docker" version "0.33.0"
 	id "com.palantir.docker-run" version "0.33.0"
-	//informaci�n de los plugin docker https://github.com/palantir/gradle-docker
+	//información de los plugin docker https://github.com/palantir/gradle-docker
 }
 
 group = 'us.mitfs.samples'
@@ -13,15 +13,11 @@ sourceCompatibility = '17'
 
 repositories {
 	mavenCentral()
-    maven { url "https://repo.spring.io/libs-release" }
-	maven {
-            url "https://plugins.gradle.org/m2/"
-       }
 	maven {
 		name = "GitHubPackages"
 		url = uri("https://maven.pkg.github.com/MIT-FS/Audit4Improve-API")
 		credentials {
-		//las propiedades gpr.user y gpr.key están configuradas en gradle.properties en el raiz del proyecto, y se añade a .gitignore para que no se suban
+		//las propiedades gpr.user y gpr.key estÃ¡n configuradas en gradle.properties en el raiz del proyecto, y se aÃ±ade a .gitignore para que no se suban
 		//O bien configuro las variables de entorno GITHUB_LOGIN y GITHUB_PACKAGES
 			username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_LOGIN")
 			password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGES")
